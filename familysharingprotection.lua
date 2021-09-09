@@ -10,8 +10,8 @@ if SERVER then
     }
 
     function PLUGIN:PlayerInitialSpawn(client)
-	    if !steamidwhitelist[client:SteamID64()] and !client:IsBot() and client:OwnerSteamID64() != client:SteamID64() then
-		    client:Kick(PLUGIN.KickMessage)
-	    end
+	if !steamidwhitelist[client:SteamID64()] and !client:IsBot() and client:OwnerSteamID64() != client:SteamID64() then
+	    client:Kick(PLUGIN.KickMessage)
+	end
     end
 end
