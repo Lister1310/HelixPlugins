@@ -12,6 +12,14 @@ ix.config.SetDefault("permakillWorld", true, "Whether or not world and self dama
     category = "Permakill"
 })
 
+ix.config.Set("permakill", true, "Whether or not permakill is activated on the server.", nil, {
+    category = "Permakill"
+})
+
+ix.config.Set("permakillWorld", true, "Whether or not world and self damaged produce permanent death.", nil, {
+    category = "Permakill"
+})
+
 function PLUGIN:ShouldPermakillCharacter(client, character, inflictor, attacker)
     if character:HasFlags("D") then
         return false
