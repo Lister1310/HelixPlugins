@@ -2,7 +2,7 @@ net.Receive("CarDealerUsed", function(len, player)
     local client = LocalPlayer()
     local character = client:GetCharacter()
 
-	local DealerMainFrame = vgui.Create("DFrame")
+    local DealerMainFrame = vgui.Create("DFrame")
     DealerMainFrame:SetSize(ScrW()/3, ScrH()/1.5) 
     DealerMainFrame:SetTitle(L("cardealerName")) 
     DealerMainFrame:SetVisible(true) 
