@@ -1,5 +1,5 @@
 PLUGIN.name = "IxCarDealer"
-PLUGIN.description = ""
+PLUGIN.description = "Plugin for buying cars from a car dealer"
 PLUGIN.author = "Lister"
 
 IxCarDealer = IxCarDealer or {}
