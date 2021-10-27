@@ -19,7 +19,7 @@ function PLUGIN:PlayerDeath(client)
 		for a, b in pairs(client:GetCharacter():GetInventory():GetItems()) do
 			if b:GetData("equip") == true then
             	b:Remove()
-        	end
+            end
         end
-	end
+    end
 end
