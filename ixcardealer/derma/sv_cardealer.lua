@@ -18,7 +18,7 @@ net.Receive("ixMoneyTake", function(len, player)
         character:GetInventory():Add("carkey", 1)
     end
 
-    player:GetCharacter():TakeMoney(pricecar)
+    character:TakeMoney(pricecar)
     player:Notify("You have buy successfully "..CarData.name.." for "..pricecar..ix.currency.symbol.."!")
 
     simfphys.SpawnVehicleSimple(spawnname, spwn, ang)
