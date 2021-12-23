@@ -15,9 +15,9 @@ if SERVER then
         self:SetMoveType(MOVETYPE_VPHYSICS)
 	end
 
-	function ENT:Use(Name, Activator, Caller)	
+	function ENT:Use(client)	
 		net.Start("CarDealerUsed")
-	    net.Send(Activator)
+	    net.Send(client)
     end
 end
 
