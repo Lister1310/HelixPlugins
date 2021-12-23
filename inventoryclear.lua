@@ -11,12 +11,16 @@ ix.config.Add("Clear Equipped", false, "Clear only equipped items after characte
 })
 
 function PLUGIN:PlayerDeath(client)
+	local character = client:GetCharacter()
+	local inventory = character:GetInventory()
+	local items = inventory:GetItems()
+	
 	if ix.config.Get("Clear Inventory", true) then
-		for k, v in pairs(client:GetCharacter():GetInventory():GetItems()) do
+		for k, v in pairs(items) do
 			v:Remove()
 		end
 	elseif ix.config.Get("Clear Equipped", true) then
-		for a, b in pairs(client:GetCharacter():GetInventory():GetItems()) do
+		for a, b in pairs(items) do
 			if b:GetData("equip") == true then
             	b:Remove()
         	end
