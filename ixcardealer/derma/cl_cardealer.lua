@@ -38,7 +38,7 @@ net.Receive("CarDealerUsed", function(len, player)
         Derma_Query(L("carPurch").." ".. v["price"].. ix.currency.symbol.."?\n".. L("serverRestart"), L("carPurchTitle"),
             L("yes"), function() 
                 net.Start("ixMoneyTake")
-                net.WriteInt(k, 32)
+                net.WriteUInt(k, 32)
                 net.SendToServer()
              end,
             L("no"), function() end)
