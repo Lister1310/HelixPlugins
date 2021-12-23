@@ -22,6 +22,6 @@ ix.config.Set("permakillWorld", true, "Whether or not world and self damaged pro
 
 function PLUGIN:ShouldPermakillCharacter(client, character, inflictor, attacker)
     if !character:HasFlags("D") then 
-    	return true
+    	return character:Ban()
     end
 end
