@@ -19,10 +19,6 @@ net.Receive("ixMoneyTake", function(len, player)
         return player:Notify("You don't have enough funds to rent a car!")
     end
 
-    if !character:GetInventory():HasItem("carkey") then
-        character:GetInventory():Add("carkey", 1)
-    end
-
     character:TakeMoney(pricecar)
     player:Notify("You have buy successfully "..CarData.name.." for "..pricecar..ix.currency.symbol.."!")
 
