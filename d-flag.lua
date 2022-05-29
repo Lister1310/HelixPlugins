@@ -1,3 +1,4 @@
+local PLUGIN = PLUGIN
 PLUGIN.name = "D-Flag"
 PLUGIN.description = "The flag under which the character will not be banned forever after death."
 PLUGIN.author = "Lister"
@@ -21,7 +22,5 @@ ix.config.Set("permakillWorld", true, "Whether or not world and self damaged pro
 })
 
 function PLUGIN:ShouldPermakillCharacter(client, character, inflictor, attacker)
-    if character:HasFlags("D") then 
-    	return false
-    end
+    if (character:HasFlags("D")) then return false end
 end
