@@ -15,7 +15,7 @@ net.Receive("CarDealerUsed", function(len, player)
     local DScrollPanel = DealerMainFrame:Add("DScrollPanel")
     DScrollPanel:Dock(FILL)
 
-    for k,v in pairs(IxCarDealer.Cars) do
+    for k, v in pairs(IxCarDealer.Cars) do
         local CarFrame = DScrollPanel:Add("DPanel")
         CarFrame:Dock(TOP) 
         CarFrame:SetSize(100, 100) 
