@@ -1,3 +1,4 @@
+local PLUGIN = PLUGIN
 PLUGIN.name = "IxCarDealer"
 PLUGIN.description = "Plugin for buying cars from a car dealer"
 PLUGIN.author = "Lister"
@@ -18,19 +19,15 @@ IxCarDealer.Cars = {
 
 function PLUGIN:SaveData()
     local data = {}
-        for k, v in ipairs(ents.FindByClass("ix_cardealer")) do
-            data[#data + 1] =
-            {
-                pos = v:GetPos(),
-                angles = v:GetAngles()
-            }
-        end
+    for k, v in pairs(ents.FindByClass("ix_cardealer")) do
+        data[#data + 1] = {pos = v:GetPos(), angles = v:GetAngles()}
+    end
 
     self:SetData(data)
 end
 
 function PLUGIN:LoadData()
-    for k, v in ipairs(self:GetData() or {}) do
+    for k, v in pairs(self:GetData() or {}) do
         local entity = ents.Create("ix_cardealer")
         entity:SetPos(v.pos)
         entity:SetAngles(v.angles)
